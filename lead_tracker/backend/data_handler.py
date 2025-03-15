@@ -3,6 +3,9 @@ import os
 
 DATA_FILE = "data/leads.json"
 
+# Ensure the 'data/' directory exists before writing files
+os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+
 def load_leads():
     """Load leads from a JSON file."""
     if not os.path.exists(DATA_FILE) or os.stat(DATA_FILE).st_size == 0:
